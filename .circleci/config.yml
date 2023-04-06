@@ -60,21 +60,21 @@ jobs:
       - aws-cli/setup
       - checkout
       # Set Env for Elastic Beanstalk Env
+      # eb init
+      # eb abort udagram-api-dev
+      # eb use udagram-api-dev
+      # eb setenv POSTGRES_DB=$POSTGRES_DB
+      # eb setenv POSTGRES_HOST=$POSTGRES_HOST
+      # eb setenv POSTGRES_USERNAME=$POSTGRES_USERNAME
+      # eb setenv POSTGRES_PASSWORD=$POSTGRES_PASSWORD
+      # eb setenv AWS_BUCKET=$AWS_BUCKET
+      # eb setenv AWS_REGION=$AWS_REGION
+      # eb setenv AWS_PROFILE=$AWS_PROFILE
+      # eb setenv JWT_SECRET=$JWT_SECRET
       - run:
           name: Set Env for Elastic Beanstalk Env
           command: |
             echo "Setup Elastic Beanstalk Environment"
-            eb init
-            eb abort udagram-api-dev
-            eb use udagram-api-dev
-            eb setenv POSTGRES_DB=$POSTGRES_DB
-            eb setenv POSTGRES_HOST=$POSTGRES_HOST
-            eb setenv POSTGRES_USERNAME=$POSTGRES_USERNAME
-            eb setenv POSTGRES_PASSWORD=$POSTGRES_PASSWORD
-            eb setenv AWS_BUCKET=$AWS_BUCKET
-            eb setenv AWS_REGION=$AWS_REGION
-            eb setenv AWS_PROFILE=$AWS_PROFILE
-            eb setenv JWT_SECRET=$JWT_SECRET
       - run:
           name: Deploy App
           # TODO: Install, build, deploy in both apps
